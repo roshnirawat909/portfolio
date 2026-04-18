@@ -16,7 +16,7 @@ function ProjectsSection() {
             description: 'A web-based platform designed to streamline blood donations, hospital requests, and inventory tracking. BBMS replaces manual processes with a structured digital workflow, enabling hospitals and blood banks to access real-time inventory, maintain donor records, and process blood requests efficiently.',
             tags: ['React', 'Node.js', 'MongoDB', 'Express', 'TailwindCSS'],
             image: 'https://placehold.co/600x400/d32f2f/ffffff?text=Blood+Bank+Management+System',
-            liveUrl: 'https://blood-bank-five-woad.vercel.app/',
+            liveUrl: 'https://blood-bank-tau-one.vercel.app/',
             repoUrl: 'https://github.com/roshnirawat909/blood-bank',
             category: 'Full Stack'
         },
