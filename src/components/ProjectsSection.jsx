@@ -11,6 +11,16 @@ function ProjectsSection() {
     const cardsRef = useRef([]);
 
     const projects = [
+
+         {
+            title: ' GradeTrack University – Student Progression System',
+            description: 'A modern full-stack web application built using the MERN Stack (MongoDB, Express.js, React.js, Node.js) that enables students to monitor academic performance, manage semesters, track grades, and calculate GPA efficiently.',
+            tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+            image: 'https://placehold.co/600x400/d32f2f/ffffff?text=Student +Bank+Progression+System',
+            liveUrl: 'https://student-progression.vercel.app/',
+            repoUrl: 'https://github.com/roshnirawat909/Student-Progression#gradetrack---mern-stack',
+            category: 'Full Stack'
+        },
         {
             title: 'Blood Bank Management System (BBMS)',
             description: 'A web-based platform designed to streamline blood donations, hospital requests, and inventory tracking. BBMS replaces manual processes with a structured digital workflow, enabling hospitals and blood banks to access real-time inventory, maintain donor records, and process blood requests efficiently.',
@@ -30,7 +40,7 @@ function ProjectsSection() {
             repoUrl: 'https://github.com/roshnirawat909/FullStackBlog',
             category: 'Full Stack'
         },
-        {
+       {/*{
             title: 'DSA Visualizer',
             description: 'An interactive platform for visualizing Data Structures and Algorithms. Helps learners understand sorting, searching, graph traversal through step-by-step animations.',
             tags: ['JavaScript', 'React', 'Algorithms', 'DSA', 'Visualization', 'GSAP'],
@@ -38,7 +48,7 @@ function ProjectsSection() {
             liveUrl: '',
             repoUrl: '',
             category: 'Full Stack + Generative AI'
-        },
+        }, */},
         {
             title: 'College Club Management System',
             description: 'A full-stack web application designed to manage college clubs, members, and events efficiently. Built with React and TailwindCSS on the frontend, and Node.js, Express, and MongoDB on the backend. The system allows students to join clubs, register for events, and view announcements, while administrators can manage members, schedule events, and track participation through a secure, centralized dashboard with authentication and role-based access control.',
