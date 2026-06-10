@@ -352,7 +352,7 @@ function ProjectsSection() {
 
                                 {/* Tags */}
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.tags.slice(0, 4).map(tag => (
+                                    {((Array.isArray(project.tags) ? project.tags : []).slice(0, 4)).map(tag => (
                                         <span
                                             key={tag}
                                             className="text-xs font-medium px-2 py-1 rounded-full bg-[#3B82F6]/20 text-[#22D3EE]"
@@ -361,6 +361,7 @@ function ProjectsSection() {
                                         </span>
                                     ))}
                                 </div>
+
 
                                 {/* Links */}
                                 <div className="flex justify-end gap-4 pt-4 border-t border-gray-700">
