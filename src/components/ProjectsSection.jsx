@@ -36,26 +36,44 @@ function ProjectsSection() {
             description: 'A secure, bilingual blogging platform with semantic search, streamlined repo collaboration, and elegant UI/UX. Features include authentication, file uploads, and generative AI integrations.',
             tags: ['React', 'Node.js', 'MongoDB', 'AI', 'TailwindCSS', 'GSAP'],
             image: 'https://placehold.co/600x400/4c1d95/38bdf8?text=BlogifyHub',
-            liveUrl: 'https://full-stack-blog-wf3k-giryqlp1n-roshnirawat909s-projects.vercel.app/',
+            liveUrl: 'https://full-stack-blog-v5op.vercel.app/',
             repoUrl: 'https://github.com/roshnirawat909/FullStackBlog',
             category: 'Full Stack'
         },
-       {/*{
+         {
+            title: 'Local AI Chatbot using n8n + Ollama + Llama3',
+            description: 'Built a fully local AI chatbot workflow using n8n and Ollama without any paid APIs.',
+            tags: [' n8n' ,'Ollama ','Llama3'],
+            image: 'https://placehold.co/600x400/4c1d95/38bdf8?text=',
+            liveUrl: '',
+            repoUrl: 'https://github.com/roshnirawat909/local-ai-chatbot-',
+            category: 'Full Stack'
+        },
+      {
             title: 'DSA Visualizer',
             description: 'An interactive platform for visualizing Data Structures and Algorithms. Helps learners understand sorting, searching, graph traversal through step-by-step animations.',
             tags: ['JavaScript', 'React', 'Algorithms', 'DSA', 'Visualization', 'GSAP'],
             image: 'https://placehold.co/600x400/065f46/34d399?text=DSA+Visualizer',
             liveUrl: '',
-            repoUrl: '',
+            repoUrl: 'https://github.com/roshnirawat909/-DSA-Visualizer',
             category: 'Full Stack + Generative AI'
-        }, */},
+        }, 
         {
             title: 'College Club Management System',
             description: 'A full-stack web application designed to manage college clubs, members, and events efficiently. Built with React and TailwindCSS on the frontend, and Node.js, Express, and MongoDB on the backend. The system allows students to join clubs, register for events, and view announcements, while administrators can manage members, schedule events, and track participation through a secure, centralized dashboard with authentication and role-based access control.',
             tags: ['React', 'TailwindCSS', 'Node.js', 'Express', 'MongoDB'],
             image: 'https://placehold.co/600x400/7c3aed/ffffff?text=Club+Management+System',
-            liveUrl: 'https://college-club-management-project-8vu.vercel.app/',
+            liveUrl: 'https://college-club-management-gray.vercel.app/',
             repoUrl: 'https://github.com/roshnirawat909/collegeClubManagementProject',
+            category: 'Full Stack'
+        },
+        {
+            title: 'chatbot',
+            description: 'Built a chatbot application powered by Ollama running locally hosted LLMs, enabling private and real-time AI conversations without external API dependencies. Developed the frontend in React and integrated backend APIs using Node.js and Express for seamless communication with local AI models.',
+            tags: ['React', 'Node.js', 'MongoDB', 'AI', 'TailwindCSS', 'GSAP'],
+            image: 'https://placehold.co/600x400/4c1d95/38bdf8?text=',
+            liveUrl: '',
+            repoUrl: 'https://github.com/roshnirawat909/Chatbot',
             category: 'Full Stack'
         },
 
