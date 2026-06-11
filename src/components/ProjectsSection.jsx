@@ -44,7 +44,7 @@ function ProjectsSection() {
             title: 'Local AI Chatbot using n8n + Ollama + Llama3',
             description: 'Built a fully local AI chatbot workflow using n8n and Ollama without any paid APIs.',
             tags: [' n8n' ,'Ollama ','Llama3'],
-            image: 'https://placehold.co/600x400/4c1d95/38bdf8?text=',
+            image: 'https://placehold.co/600x400/4c1d95/38bdf8?text=Local AI Chatbot ',
             liveUrl: '',
             repoUrl: 'https://github.com/roshnirawat909/local-ai-chatbot-',
             category: 'Full Stack'
