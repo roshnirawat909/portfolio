@@ -11,6 +11,7 @@ function SkillsSection() {
         { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
         { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
         { name: 'C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg' },
+        { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
         { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
         { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
         { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
@@ -23,13 +24,13 @@ function SkillsSection() {
     ];
 
     return (
-        <section id="skills" className="min-h-screen flex flex-col justify-center py-20 bg-[#0F172A]">
+        <section id="skills" className="min-h-screen flex flex-col justify-center py-20 bg-[var(--color-background)]">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-12">
-                    <h2 className="font-pricedown text-3xl md:text-4xl font-bold mb-4 text-[#F8FAFC]">
-                        My <span className="text-[#6366F1]">Tech Stack</span>
+                    <h2 className="font-pricedown text-4xl md:text-5xl font-bold text-[var(--color-text)] mb-6">
+                        My <span className="text-[var(--color-text)]">Tech Stack</span>
                     </h2>
-                    <p className="max-w-2xl mx-auto text-[#94A3B8]">
+                    <p className="max-w-2xl mx-auto text-[var(--color-text-muted)]">
                         Technologies I've been working with recently
                     </p>
                 </div>
@@ -38,7 +39,7 @@ function SkillsSection() {
                     {skills.map((skill, index) => (
                         <div 
                             key={skill.name}
-                            className="group relative p-4 md:p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer bg-[#1E293B] hover:bg-[#3B82F6]/20 border border-[#3B82F6]/20 hover:border-[#3B82F6]/50"
+                            className="group relative p-4 md:p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer bg-[var(--color-surface)] hover:bg-[#3B82F6]/20 border border-[color:var(--color-border)] hover:border-[#3B82F6]/50"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             {/* Glow effect on hover */}
@@ -53,7 +54,7 @@ function SkillsSection() {
                                         style={{ filter: skill.invert ? 'invert(1)' : 'none' }}
                                     />
                                 </div>
-                                <p className="font-semibold text-sm md:text-base text-[#F8FAFC] group-hover:text-[#22D3EE]">
+                                <p className="font-semibold text-sm md:text-base text-[var(--color-text)] group-hover:text-[#22D3EE]">
                                     {skill.name}
                                 </p>
                             </div>

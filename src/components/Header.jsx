@@ -1,75 +1,116 @@
-import React, { useState } from 'react';
-import MenuIcon from '../icons Components/MenuIcon';
+import React, { useState } from "react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
-function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+function Header({ isDarkTheme, onToggleTheme }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [active, setActive] = useState("#home");
 
-    const navLinks = [
-        { href: '#about', label: 'About' },
-        { href: '#skills', label: 'Skills' },
-        { href: '#projects', label: 'Projects' },
-        { href: '#contact', label: 'Contact' },
-    ];
+  const navLinks = [
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#skills", label: "Skills" },
+    { href: "#projects", label: "Projects" },
+    { href: "#services", label: "Services" },
+    { href: "#achievements", label: "Achievements" },
+    { href: "#contact", label: "Contact" },
+  ];
 
-    const handleLinkClick = () => {
-        setIsMenuOpen(false);
-    };
+  return (
+    <header className={`fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b shadow-lg transition-colors duration-300 ${isDarkTheme ? "bg-[#0B1120]/70 border-white/10" : "bg-white/80 border-slate-300/70"}`}>
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        {/* Logo */}
+        <a
+          href="#home"
+          className={`text-3xl font-extrabold tracking-wide ${isDarkTheme ? "text-white" : "text-slate-900"}`}
+        >
+         
+          <span className="text-cyan-400">Roshni</span>
+          <span className="text-[var(--color-text)]">Rawat</span>
+        
+        </a>
 
-    return (
-        <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0F172A]/95 backdrop-blur-lg border-b border-[#3B82F6]/30">
-            <div className="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-                <a href="#home" className="text-2xl md:text-3xl font-bold transition-colors duration-300 text-[#F8FAFC]">
-                    <span className="text-[#6366F1]">Roshni</span> Rawat
-                </a>
-                
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    {navLinks.map(link => (
-                        <a 
-                            key={link.href} 
-                            href={link.href} 
-                            className="text-lg md:text-xl font-medium hover:text-[#6366F1] transition-colors duration-300 relative group text-[#F8FAFC]"
-                        >
-                            {link.label}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6366F1] transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                    ))}
-                </nav>
+        {/* Desktop Navigation */}
+        <nav className={`hidden lg:flex items-center gap-2 backdrop-blur-lg border rounded-full px-4 py-2 transition-colors duration-300 ${isDarkTheme ? "bg-white/5 border-white/10" : "bg-slate-100/80 border-slate-300/70"}`}>
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setActive(link.href)}
+              className={`px-5 py-2 rounded-full transition duration-300 font-medium ${
+                active === link.href
+                  ? isDarkTheme
+                    ? "bg-cyan-500/20 text-cyan-400"
+                    : "bg-cyan-500/10 text-cyan-600"
+                  : isDarkTheme
+                    ? "text-gray-300 hover:text-white"
+                    : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
 
-                {/* Mobile Menu Button */}
-                <div className="flex items-center md:hidden">
-                    <button 
-                        onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                        className="p-2 text-[#F8FAFC]"
-                        aria-label="Toggle menu"
-                    >
-                        <MenuIcon className="w-6 h-6" />
-                    </button>
-                </div>
-            </div>
+        {/* Right Side */}
+        <div className="hidden lg:flex items-center gap-4">
+         
 
-            {/* Mobile Menu */}
-            <div className={`md:hidden absolute top-full left-0 right-0 transition-all duration-300 ${
-                isMenuOpen 
-                    ? 'opacity-100 visible translate-y-0' 
-                    : 'opacity-0 invisible -translate-y-4'
-            } bg-[#0F172A]/98 backdrop-blur-lg shadow-lg`}>
-                <div className="px-4 py-4 space-y-2">
-                    {navLinks.map(link => (
-                        <a 
-                            key={link.href} 
-                            href={link.href} 
-                            onClick={handleLinkClick}
-                            className="block py-3 px-4 rounded-lg font-medium text-xl transition-all duration-300 text-[#F8FAFC] hover:bg-[#3B82F6]/20"
-                        >
-                            {link.label}
-                        </a>
-                    ))}
-                </div>
-            </div>
-        </header>
-    );
+          <button
+            onClick={onToggleTheme}
+            className={`w-11 h-11 rounded-full border flex items-center justify-center transition ${
+              isDarkTheme
+                ? "border-white/10 hover:bg-white/10 text-yellow-400"
+                : "border-slate-300/70 bg-white/70 hover:bg-slate-100 text-slate-700 shadow-sm"
+            }`}
+            aria-label="Toggle theme"
+          >
+            {isDarkTheme ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
+
+        {/* Mobile Button */}
+        <button
+          className={`lg:hidden transition-colors duration-300 ${isDarkTheme ? "text-white" : "text-slate-900"}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`lg:hidden transition-all duration-300 overflow-hidden backdrop-blur-xl ${
+          isMenuOpen ? "max-h-[500px]" : "max-h-0"
+        } ${isDarkTheme ? "bg-[#0B1120]/95" : "bg-white/95"}`}
+      >
+        <div className="px-6 py-5 space-y-4">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => {
+                setActive(link.href);
+                setIsMenuOpen(false);
+              }}
+              className={`block rounded-lg px-4 py-3 transition ${
+                active === link.href
+                  ? isDarkTheme
+                    ? "bg-cyan-500/20 text-cyan-400"
+                    : "bg-cyan-500/10 text-cyan-600"
+                  : isDarkTheme
+                    ? "text-gray-300 hover:bg-white/10 hover:text-white"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+
+          
+        </div>
+      </div>
+    </header>
+  );
 }
 
 export default Header;
-

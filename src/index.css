@@ -2,30 +2,42 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Custom Color Theme */
+
 :root {
-  --color-background: #FFFFFF;
+  --color-background: #0F172A;
+  --color-surface: #1E293B;
+  --color-surface-2: #0F172A;
   --color-primary: #6366F1;
   --color-accent: #6366F1;
-  --color-text: #111827;
-  --color-text-muted: #6B7280;
+  --color-text: #F8FAFC;
+  --color-text-muted: #94A3B8;
   --color-secondary: #E5E7EB;
---font-sans: ui-sans-serif, system-ui, sans-serif;
+  --color-border: rgba(59, 130, 246, 0.2);
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Custom styles for light/dark themes */
+html.light {
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #F8FAFC;
+  --color-text: #111827;
+  --color-text-muted: #475569;
+  --color-border: rgba(99, 102, 241, 0.18);
+}
+
+
 body {
   background-color: var(--color-background);
   color: var(--color-text);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 1.05em;
   letter-spacing: 0.8px;
-  text-shadow: 0 0 1px rgba(248, 250, 252, 0.8); /* Improves readability with subtle glow for dark bg */
+  text-shadow: 0 0 1px rgba(248, 250, 252, 0.8);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Pricedown font-face */
+
 @font-face {
   font-family: "Pricedown";
   src: url("/pricedown (1) - Copy.otf") format("opentype");
@@ -36,5 +48,10 @@ body {
 
 .font-pricedown {
   font-family: "Pricedown", ui-sans-serif, system-ui, sans-serif;
+
 }
+
+
+
+
 

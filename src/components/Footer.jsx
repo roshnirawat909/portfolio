@@ -32,15 +32,15 @@ function Footer() {
     ];
 
     return (
-        <footer className="py-12 bg-gradient-to-b from-[#0F172A] to-[#1E293B]">
+        <footer className="py-12 bg-gradient-to-b from-[var(--color-background)] to-[var(--color-surface)]">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     {/* Brand & Description */}
                     <div className="text-center md:text-left">
-                        <h3 className="font-pricedown text-2xl md:text-3xl font-bold mb-2 text-[#F8FAFC]">
-                            <span className="text-[#6366F1]">Roshni</span> Rawat
+                        <h3 className="font-pricedown text-2xl md:text-3xl font-bold mb-2 text-[var(--color-text)]">
+                            <span className="text-[var(--color-text)]">Roshni</span> Rawat
                         </h3>
-                        <p className="font-pricedown text-base md:text-lg text-[#94A3B8]">
+                        <p className="font-pricedown text-base md:text-lg text-[var(--color-text-muted)]">
                             Full Stack Developer & Generative AI 
                         </p>
                     </div>
@@ -51,7 +51,7 @@ function Footer() {
                             <a 
                                 key={link.href}
                                 href={link.href} 
-                                className="text-sm font-medium hover:text-[#6366F1] transition-colors duration-300 text-[#94A3B8]"
+                                className="text-sm font-medium hover:text-[#6366F1] transition-colors duration-300 text-[var(--color-text-muted)]"
                             >
                                 {link.label}
                             </a>
@@ -66,7 +66,7 @@ function Footer() {
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-2 rounded-full transition-all duration-300 hover:scale-110 bg-[#3B82F6]/20 text-[#94A3B8] hover:bg-[#3B82F6]/40 hover:text-[#22D3EE]"
+                                className="p-2 rounded-full transition-all duration-300 hover:scale-110 bg-[#3B82F6]/20 text-[var(--color-text-muted)] hover:bg-[#3B82F6]/40 hover:text-[#22D3EE]"
                                 aria-label={link.name}
                             >
                                 {link.icon}
@@ -80,7 +80,7 @@ function Footer() {
 
                 {/* Copyright */}
                 <div className="text-center">
-                    <p className="text-sm text-[#64748B]">
+                    <p className="text-sm text-[var(--color-text-muted)]">
                         © {currentYear} Roshni Rawat. All Rights Reserved.
                     </p>
                 </div>

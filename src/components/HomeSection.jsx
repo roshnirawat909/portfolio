@@ -2,91 +2,78 @@ import React from 'react';
 import GithubIcon from '../icons Components/GithubIcon';
 import LinkedinIcon from '../icons Components/LinkedinIcon';
 import LeetCodeIcon from '../icons Components/LeetCodeIcon';
-import ExternalLinkIcon from '../icons Components/ExternalLinkIcon';
+import { CheckCircle } from 'lucide-react';
 
 function HomeSection() {
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-16">
+        <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-16 bg-[var(--color-background)]">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                    {/* Profile Image */}
-                    <div className="order-2 lg:order-1 flex-shrink-0">
-                        <div className="relative">
-                            <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 shadow-2xl border-[#3B82F6]">
-                                <img
-                                    src="/Roshni.jpeg"
-                                    alt="Roshni Rawat"
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                            {/* Decorative elements */}
-                            <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full bg-[#3B82F6] opacity-20 animate-pulse"></div>
-                            <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-[#22D3EE] opacity-20"></div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Left Content */}
+                    <div className="space-y-8">
+                        {/* Status Badge */}
+                        <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full bg-[#22D3EE] animate-pulse"></div>
+                            <span className="text-[var(--color-text)] font-medium text-sm">Open for Internships & Full-time Roles</span>
                         </div>
-                    </div>
 
-                    {/* Content */}
-                    <div className="order-1 lg:order-2 text-center lg:text-left max-w-2xl">
-                        <p className="font-sans text-sm md:text-base font-medium mb-3 text-[#22D3EE]">
-                            Hello, I'm
-                        </p>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                            <span className="font-pricedown text-[#F8FAFC]">Roshni </span>
-                            <span className="font-pricedown text-[#6366F1]">Rawat</span>
-                        </h1>
-                        <h2 className="font-sans text-xl md:text-2xl font-semibold mb-6 text-[#94A3B8]">
-                            Full Stack Developer & Generative AI
-                        </h2>
-                        <p className="font-sans text-base md:text-lg leading-relaxed mb-8 text-[#CBD5E1]">
-                            I create fast, responsive, and user-friendly web applications using HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB. I also work with Generative AI to add smart features like search, automation, and intelligent workflows, making apps future-ready.
-                        </p>
+                        {/* Main Heading */}
+                        <div className="space-y-4">
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-pricedown leading-tight">
+                                <span className="text-[var(--color-text)]">Hi, I am </span>
+                                <span className="bg-gradient-to-r from-[#6366F1] via-[#22D3EE] to-[#3B82F6] bg-clip-text text-transparent">Roshni Rawat</span>
+                            </h1>
 
-                        {/* Social Links */}
-                        <div className="flex justify-center lg:justify-start gap-4 mb-8">
-                            <a
-                                href="https://github.com/roshnirawat909"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-3 rounded-full transition-all duration-300 hover:scale-110 hover:-translate-y-1 bg-[#3B82F6]/20 text-[#F8FAFC] hover:bg-[#3B82F6]/40 hover:text-[#22D3EE]"
-                                aria-label="GitHub"
-                            >
-                                <GithubIcon className="w-6 h-6" />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/roshni-rawat-561656335"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-3 rounded-full transition-all duration-300 hover:scale-110 hover:-translate-y-1 bg-[#3B82F6]/20 text-[#F8FAFC] hover:bg-[#3B82F6]/40 hover:text-[#22D3EE]"
-                                aria-label="LinkedIn"
-                            >
-                                <LinkedinIcon className="w-6 h-6" />
-                            </a>
-                            <a
-                                href="https://leetcode.com/roshnirawat909"
-                                className="p-3 rounded-full transition-all duration-300 hover:scale-110 hover:-translate-y-1 bg-[#3B82F6]/20 text-[#F8FAFC] hover:bg-[#3B82F6]/40 hover:text-[#22D3EE]"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="LeetCode"
-                            >
-                                <LeetCodeIcon className="w-6 h-6" />
-                            </a>
+                            {/* Subtitle */}
+                            <h2 className="text-2xl md:text-3xl font-semibold">
+                                <span className="text-[var(--color-text)]">I'm a </span>
+                                <span className="text-[#22D3EE] font-bold">Full Stack Developer</span>
+                            </h2>
                         </div>
+
+                        {/* Description */}
+                        <p className="text-base md:text-lg text-[var(--color-text-muted)] leading-relaxed max-w-xl">
+                            {/* Building modern web applications with React, Node.js, Express.js, and MongoDB. */}
+                             I create fast, responsive, and user-friendly web applications using HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB. </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <a
                                 href="#projects"
-                                className="font-sans inline-flex items-center justify-center gap-2 bg-[#6366F1] hover:bg-[#4F46E5] text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#6366F1]/30"
+                                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#7C3AED] to-[#6366F1] hover:from-[#6D28D9] hover:to-[#4F46E5] text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#6366F1]/50"
                             >
-                                View My Work
-                                <ExternalLinkIcon className="w-4 h-4" />
+                                View Projects →
                             </a>
                             <a
                                 href="#contact"
-                                className="font-sans inline-flex items-center justify-center font-medium py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 border-2 border-[#3B82F6] text-[#F8FAFC] hover:bg-[#3B82F6]/20"
+                                className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#22D3EE] text-[#22D3EE] font-semibold rounded-full hover:bg-[#22D3EE]/10 transition-all duration-300 hover:scale-105"
                             >
-                                Contact Me
+                                📧 Contact Me
                             </a>
+                        </div>
+                    </div>
+
+                    {/* Right Profile Section */}
+                    <div className="relative flex justify-end">
+                        {/* Glowing Background */}
+                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#6366F1]/20 via-[#22D3EE]/10 to-[#3B82F6]/20 blur-3xl -z-10"></div>
+
+                        {/* Profile Card Container */}
+                        <div className="relative">
+
+                            {/* Profile Image */}
+                            <div className="relative rounded-3xl overflow-hidden border-2 border-[#22D3EE]/50 shadow-2xl w-64 h-64 md:w-80 md:h-80">
+                                <div className="relative w-full h-full bg-gradient-to-br from-[#3B82F6]/30 via-transparent to-[#22D3EE]/30">
+                                    <img
+                                        src="/Roshni.jpeg"
+                                        alt="Roshni Rawat"
+                                        className="w-full h-full object-cover"
+                                    />
+                                    {/* Glowing border effect */}
+                                    <div className="absolute inset-0 rounded-3xl border border-[#22D3EE] opacity-50"></div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
